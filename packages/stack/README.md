@@ -11,13 +11,13 @@ Stack navigator for use on iOS and Android.
 Open a Terminal in your project's folder and run,
 
 ```sh
-yarn add react-navigation-stack @react-native-community/masked-view react-native-safe-area-context
+yarn add react-navigation-stack @react-native-masked-view/masked-view react-native-safe-area-context
 ```
 
 or
 
 ```sh
-npm install react-navigation-stack @react-native-community/masked-view react-native-safe-area-context
+npm install react-navigation-stack @react-native-masked-view/masked-view react-native-safe-area-context
 ```
 
 ## Usage
@@ -25,12 +25,15 @@ npm install react-navigation-stack @react-native-community/masked-view react-nat
 ```js
 import { createStackNavigator } from 'react-navigation-stack';
 
-export default createStackNavigator({
-  Inbox: InboxScreen,
-  Drafts: DraftsScreen,
-}, {
-  initialRouteName: 'Inbox',
-});
+export default createStackNavigator(
+  {
+    Inbox: InboxScreen,
+    Drafts: DraftsScreen,
+  },
+  {
+    initialRouteName: 'Inbox',
+  }
+);
 ```
 
 ## Development workflow
