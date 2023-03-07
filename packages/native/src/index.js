@@ -22,7 +22,8 @@ module.exports = {
   },
 
   get SafeAreaView() {
-    return require('react-native-safe-area-view').default;
+    // react-native-safe-area-view is deprecated, use the new package
+    return require('react-native-safe-area-context/lib/commonjs').SafeAreaView;
   },
 
   get ScrollView() {

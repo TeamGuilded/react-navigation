@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dimensions, ScaledSize } from 'react-native';
+import { Dimensions, ScaledSize, EmitterSubscription } from 'react-native';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 type DimensionsType = {
@@ -32,12 +32,17 @@ export default function withDimensions<Props extends InjectedProps>(
     }
 
     componentDidMount() {
-      Dimensions.addEventListener('change', this.handleOrientationChange);
+      this.onDimensionChangedEventSubscriber = Dimensions.addEventListener(
+        'change',
+        this.handleOrientationChange
+      );
     }
 
     componentWillUnmount() {
-      Dimensions.removeEventListener('change', this.handleOrientationChange);
+      this.onDimensionChangedEventSubscriber?.remove();
     }
+
+    onDimensionChangedEventSubscriber: EmitterSubscription | null = null;
 
     handleOrientationChange = ({ window }: { window: ScaledSize }) => {
       const { width, height } = window;
