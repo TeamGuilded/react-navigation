@@ -10,7 +10,7 @@
     "lib"
   ],
   "scripts": {
-    "prepare": "bob build",
+    "guilded-ignore-prepare": "bob build",
     "clean": "del lib"
   },
   "sideEffects": false,
