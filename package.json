@@ -55,5 +55,8 @@
       "commonjs",
       "module"
     ]
+  },
+  "resolutions": {
+    "**/minimatch": "~5.1.0"
   }
 }
