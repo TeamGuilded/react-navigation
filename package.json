@@ -24,7 +24,7 @@
     "react-native": "*"
   },
   "dependencies": {
-    "@react-navigation/core": "^3.7.9",
+    "@react-navigation/core": "https://github.com/TeamGuilded/react-navigation.git#react-navigation-core-v3.7.9-gitpkg",
     "@react-navigation/native": "https://github.com/TeamGuilded/react-navigation.git#react-navigation-native-v3.8.4-gitpkg"
   },
   "devDependencies": {
